@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState } from "react";
+import "./App.css";
+const App = () => {
+  const [stars, setStars] = useState(Array.from(Array(5).keys()));
+  const [indHover, setIndHover] = useState(localStorage.getItem("clicks"));
+  const [clickFlag, setClick] = useState(false);
+  const handleClick = (e) => {
+    setIndHover(e);
+    setClick(true);
+    localStorage.setItem("clicks", e);
+  };
+  const handleHover = (e) => {
+    setIndHover(e);
+    if (clickFlag) {
+      setClick(false);
+    }
+  };
+  const handleLeave = () => {
+    if (!clickFlag) {
+      setIndHover(0);
+    }
+  };
+  const emoji = (ind) => {
+    if (ind === 5) {
+      return <div>:D</div>;
+    }
+    if (ind === 4) {
+      return <div>:|</div>;
+    }
+  };
+  console.log(typeof indHover);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {stars.map((i, ind) => {
+        return (
+          <div
+            className={ind <= indHover ? "filled" : ""}
+            onMouseOver={() => handleHover(ind)}
+            onMouseLeave={handleLeave}
+            style={{
+              display: "inline-block",
+              border: "1px solid black",
+              padding: "20px",
+            }}
+            onClick={() => handleClick(ind)}
+          >
+            {i}
+          </div>
+        );
+      })}
+      <div>
+        {indHover + 1}/{stars.length}
+      </div>
+      <div>{emoji(indHover + 1)}</div>
+    </>
   );
-}
-
+};
 export default App;

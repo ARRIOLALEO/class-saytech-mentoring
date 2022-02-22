@@ -1,0 +1,23 @@
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.App {
+  text-align: center;
+}
+
+.board {
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.square {
+  width: 48px;
+  min-height: 48px;
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

@@ -1,12 +1,14 @@
+import Counter from "./componets/Counter.jsx";
+import CounterTwo from "./componets/CounterTwo";
 import { GlovalProvider } from "./context/GlovalContext";
-import Header from "./componets/Header";
 import "./App.css";
 
 function App() {
   return (
     <GlovalProvider>
       <div className="App">
-        <Header />
+        <Counter />
+        <CounterTwo />
       </div>
     </GlovalProvider>
   );

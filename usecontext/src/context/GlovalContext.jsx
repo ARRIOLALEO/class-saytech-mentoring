@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 
-const initialState = 0;
-
-export const GlovalState = createContext(initialState);
+export const GlovalContext = createContext(null);
 
 export const GlovalProvider = ({ children }) => {
-  return <GlovalState.Provider value={initialState}>{children}</GlovalState.Provider>;
+  const [counter, setCounter] = useState(0);
+  const data = [counter, setCounter];
+  return <GlovalContext.Provider value={data}>{children}</GlovalContext.Provider>;
 };

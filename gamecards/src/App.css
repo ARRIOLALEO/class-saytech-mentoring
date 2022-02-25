@@ -1,0 +1,121 @@
+styles.css
+Usuarios con acceso
+
+Propiedades del sistema
+Tipo
+Style Sheet
+Tamaño
+2 KB
+Almacenamiento utilizado
+2 KB
+Ubicación
+FlipCard
+Propietario
+Seytech Bootcamp
+Modificado
+29 ene 2022 de Seytech Bootcamp
+Abierto
+11:04 por mí
+Creado
+2 feb 2022
+Sin descripción
+Los lectores pueden descargar.
+* {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgb(78, 78, 179);
+    margin: 0;
+  }
+  .App {
+    display: flex;
+    width: 1250px;
+    flex-wrap: wrap;
+    margin: 8px auto;
+    /* border: 1px solid rgb(240, 6, 6); */
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .single-card {
+    margin: 0 3px 3px 0;
+    height: 200px;
+    width: 200px;
+    /* border:1px solid rgb(235, 15, 15); */
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .show {
+    display: block;
+  }
+  #click {
+    position: absolute;
+    top: 8px;
+    right: 13%;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    color: rgb(78, 78, 179);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  #counter {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 1280px) {
+    .App {
+      width: 750px;
+    }
+    .single-card {
+      height: 120px;
+      width: 120px;
+    }
+  }
+  
+  @media screen and (max-width: 385px) {
+    .App {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    .single-card {
+      height: 60px;
+      width: 20%;
+    }
+  }
+  #loading {
+    font-size: 2rem;
+  }
+  button {
+    outline: none;
+    background-color: rgb(78, 78, 179);
+    color: white;
+  }
+  
+  @media screen and (max-width: 385px) {
+    #click {
+      position: absolute;
+      top: 400px;
+      right: 35%;
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      color: rgb(78, 78, 179);
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+  }
+  
